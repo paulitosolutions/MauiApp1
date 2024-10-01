@@ -1,6 +1,4 @@
 # This workflow will build a .NET project for iOS
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET iOS Build
 
 on:
@@ -22,11 +20,11 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: Install MAUI iOS workload
-      run: dotnet workload install maui-ios
+    - name: Install MAUI workloads (iOS and Android)
+      run: dotnet workload install maui-ios maui-android
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet workload restore
 
     - name: Build iOS project
       run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore
