@@ -21,12 +21,13 @@
 		<Nullable>enable</Nullable>
 		<Trimmed>false</Trimmed>
     	<LinkerBehavior>LinkFrameworkSDKsOnly</LinkerBehavior>
-
+		<PublishTrimmed>false</PublishTrimmed>
+		
 		<!-- Display name -->
 		<ApplicationTitle>MauiApp1</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.paulsolutions.mauiapp1</ApplicationId>
+		<ApplicationId>com.paulitosolutions.mauiapp1</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
