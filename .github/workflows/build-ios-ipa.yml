@@ -24,7 +24,7 @@ jobs:
       run: dotnet workload install maui-ios
 
     - name: Restore dependencies
-      run: dotnet restore --skip-android
+      run: dotnet restore
 
     - name: Build iOS project
       run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore
