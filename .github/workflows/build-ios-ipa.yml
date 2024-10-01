@@ -1,0 +1,41 @@
+# This workflow will build a .NET project for iOS
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET iOS Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Install MAUI iOS workload
+      run: dotnet workload install maui-ios
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build iOS project
+      run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore
+
+    - name: Publish IPA
+      run: dotnet publish MauiApp1.csproj -c Release -f net8.0-ios -o publish /p:RuntimeIdentifier=ios-arm64 /p:Configuration=Release /p:_AppBundle=App /p:BuildIpa=true
+
+    - name: Upload IPA artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: maui-app-ipa
+        path: publish/*.ipa
