@@ -21,8 +21,7 @@
 		<Nullable>enable</Nullable>
 		<Trimmed>false</Trimmed>
     	<LinkerBehavior>LinkFrameworkSDKsOnly</LinkerBehavior>
-		<PublishTrimmed>false</PublishTrimmed>
-		
+
 		<!-- Display name -->
 		<ApplicationTitle>MauiApp1</ApplicationTitle>
 
