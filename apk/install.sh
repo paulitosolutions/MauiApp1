@@ -1,3 +1,3 @@
-adb install -r ./com.companyname.mauiapp1-Signed.apk
-adb shell pm list packages | grep com.companyname.mauiapp1
-adb shell monkey -p com.companyname.mauiapp1 -c android.intent.category.LAUNCHER 1
+adb install -r ./com.paulitosolutions.mauiapp1-Signed.apk
+adb shell pm list packages | grep com.paulitosolutions.mauiapp1
+adb shell monkey -p com.paulitosolutions.mauiapp1 -c android.intent.category.LAUNCHER 1
