@@ -26,7 +26,7 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build MauiApp1.csproj -c Release -f net8.0-android --no-restore
-        - name: Publish APK
+    - name: Publish APK
       run: dotnet publish MauiApp1.csproj -c Release -f net8.0-android -o publish /p:AndroidPackageFormat=apk
     - name: Upload APK artifact
       uses: actions/upload-artifact@v3
