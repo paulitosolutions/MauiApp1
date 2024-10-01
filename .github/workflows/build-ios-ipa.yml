@@ -27,7 +27,7 @@ jobs:
       run: dotnet restore
 
     - name: Build iOS project
-      run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore
+      run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore /p:PublishTrimmed=false /p:LinkerBehavior=LinkFrameworkSDKsOnly 
 
     - name: Publish IPA
       run: dotnet publish MauiApp1.csproj -c Release -f net8.0-ios -o publish /p:RuntimeIdentifier=ios-arm64 /p:Configuration=Release /p:_AppBundle=App /p:BuildIpa=true /p:PublishTrimmed=false /p:LinkerBehavior=LinkFrameworkSDKsOnly 
