@@ -19,12 +19,14 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<Trimmed>false</Trimmed>
+    	<LinkerBehavior>LinkFrameworkSDKsOnly</LinkerBehavior>
 
 		<!-- Display name -->
 		<ApplicationTitle>MauiApp1</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauiapp1</ApplicationId>
+		<ApplicationId>com.paulsolutions.mauiapp1</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
