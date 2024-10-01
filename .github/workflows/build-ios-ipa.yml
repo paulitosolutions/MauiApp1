@@ -30,7 +30,7 @@ jobs:
       run: dotnet build MauiApp1.csproj -c Release -f net8.0-ios --no-restore
 
     - name: Publish IPA
-      run: dotnet publish MauiApp1.csproj -c Release -f net8.0-ios -o publish /p:RuntimeIdentifier=ios-arm64 /p:Configuration=Release /p:_AppBundle=App /p:BuildIpa=true
+      run: dotnet publish MauiApp1.csproj -c Release -f net8.0-ios -o publish /p:RuntimeIdentifier=ios-arm64 /p:Configuration=Release /p:_AppBundle=App /p:BuildIpa=true /p:PublishTrimmed=false /p:LinkerBehavior=LinkFrameworkSDKsOnly 
 
     - name: Upload IPA artifact
       uses: actions/upload-artifact@v3
